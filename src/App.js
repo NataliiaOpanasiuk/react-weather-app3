@@ -6,13 +6,13 @@ export default function App() {
       <h1>Weather App</h1>
       <footer>
         This project was created by Nataliia Opanasiuk and is{" "}
-        <a href="" target="_blank" rel="noreferrer">
+        <a
+          href="https://github.com/NataliiaOpanasiuk/react-weather-app3"
+          target="_blank"
+          rel="noreferrer"
+        >
           open-sourced on GitHub
         </a>{" "}
-        and{" "}
-        <a href="" target="_blank" rel="noreferrer">
-          hosted on Netlify
-        </a>
         .
       </footer>
     </div>
