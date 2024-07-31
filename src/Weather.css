@@ -1,1 +1,28 @@
-
+.Weather {
+  border: 1px solid black;
+  border-radius: 4px;
+  padding: 20px;
+}
+.Weather .city {
+  margin: 20px 0 0 0;
+  text-align: left;
+}
+.Weather .row {
+  margin-top: 20px;
+}
+.Weather img {
+  width: 64px;
+  height: 64px;
+}
+.Weather .temperature {
+  font-size: 64px;
+  font-weight: 400;
+  line-height: 64px;
+}
+.Weather .units {
+  position: relative;
+  top: -32px;
+}
+.Weather li {
+  list-style: none;
+}
