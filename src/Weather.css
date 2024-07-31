@@ -2,6 +2,7 @@
   border: 1px solid black;
   border-radius: 4px;
   padding: 20px;
+  background: rgba(255, 255, 255, 0.7);
 }
 .Weather .city {
   margin: 20px 0 0 0;
@@ -10,18 +11,27 @@
 .Weather .row {
   margin-top: 20px;
 }
-.Weather img {
+.row .col-6 {
+  display: flex;
+  align-items: center;
+}
+.Weather .col-6 img {
   width: 64px;
   height: 64px;
 }
 .Weather .temperature {
   font-size: 64px;
   font-weight: 400;
-  line-height: 64px;
+  line-height: 1;
+  margin-left: 10px;
 }
 .Weather .units {
   position: relative;
-  top: -32px;
+  top: -14px;
+  margin-left: 5px;
+}
+.Weather ul {
+  margin-bottom: 0;
 }
 .Weather li {
   list-style: none;
