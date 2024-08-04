@@ -8,8 +8,7 @@ export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
   const [city, setCity] = useState(props.defaultCity);
   function handleResponse(response) {
-    // console.log(response.data);
-    // console.log(new Date(response.data.time * 1000));
+    console.log(response.data);
 
     setWeatherData({
       ready: true,
@@ -20,7 +19,8 @@ export default function Weather(props) {
       wind: response.data.wind.speed,
       iconUrl: response.data.condition.icon_url,
       date: new Date(response.data.time * 1000),
-      //
+      longitude: response.data.coordinates.longitude,
+      latitude: response.data.coordinates.latitude,
     });
   }
 
@@ -60,7 +60,13 @@ export default function Weather(props) {
           </div>
         </form>
         <WeatherInfo data={weatherData} />
-        <WeatherForecast icon={weatherData.iconUrl} />
+        <WeatherForecast
+          data={weatherData}
+          // longitude={weatherData.longitude}
+          // latitude={weatherData.latitude}
+          // icon={weatherData.iconUrl}
+          // description={weatherData.description}
+        />
       </div>
     );
   } else {
