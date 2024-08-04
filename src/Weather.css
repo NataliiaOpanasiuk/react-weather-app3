@@ -16,8 +16,8 @@
   align-items: center;
 }
 .Weather .col-6 img {
-  width: 80px;
-  height: 80px;
+  width: 90px;
+  height: 90px;
 }
 .Weather .temperature {
   font-size: 64px;
@@ -27,7 +27,7 @@
 }
 .Weather .units {
   position: relative;
-  top: -14px;
+  top: -32px;
   margin-left: 5px;
 }
 .Weather ul {
