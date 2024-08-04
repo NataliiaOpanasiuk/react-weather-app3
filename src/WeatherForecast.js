@@ -1,30 +1,37 @@
-import React from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import "./WeatherForecast.css";
+import WeatherForecastDay from "./WeatherForecastDay";
 
 export default function WeatherForecast(props) {
+  let [loaded, setLoaded] = useState(false);
+  const [forecastData, setForecastData] = useState(null);
+
   function handleResponse(response) {
-    console.log(response.data);
+    // console.log(response.data);
+    setLoaded(true);
+    setForecastData(response.data.daily);
   }
 
-  const apiKey = "182a2fb198a6etcbecec6a40a9o4bb3f";
-  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${props.data.longitude}&lat=${props.data.latitude}&key=${apiKey}&units=metric`;
+  function searchForecast() {
+    const apiKey = "182a2fb198a6etcbecec6a40a9o4bb3f";
+    let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${props.coordinates.longitude}&lat=${props.coordinates.latitude}&key=${apiKey}&units=metric`;
 
-  axios.get(apiUrl).then(handleResponse);
-  return (
-    <div className="WeatherForecast">
-      <div className="row">
-        <div className="col">
-          <div className="WeatherForecast-day">Thu</div>
-          <div>
-            <img src={props.icon} alt={props.description} />
-          </div>
-          <div className="WeatherForecast-temperatures">
-            <span className="WeatherForecast-temperature-max">16°</span>
-            <span className="WeatherForecast-temperature-min">10°</span>
+    axios.get(apiUrl).then(handleResponse);
+  }
+
+  if (loaded) {
+    return (
+      <div className="WeatherForecast">
+        <div className="row">
+          <div className="col">
+            <WeatherForecastDay data={forecastData[0]} />
           </div>
         </div>
       </div>
-    </div>
-  );
+    );
+  } else {
+    searchForecast();
+    return null;
+  }
 }
