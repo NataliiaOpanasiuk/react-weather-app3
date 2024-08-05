@@ -8,3 +8,7 @@
 .WeatherForecast-temperature-max {
   font-weight: bold;
 }
+.WeatherForecast-icon img {
+  height: 80px;
+  width: 80px;
+}

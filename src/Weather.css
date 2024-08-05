@@ -30,9 +30,29 @@
   top: -32px;
   margin-left: 5px;
 }
+.Weather a {
+  color: #3fb5fa;
+}
 .Weather ul {
   margin-bottom: 0;
 }
 .Weather li {
   list-style: none;
+}
+.btn-primary {
+  background-color: #645e9d;
+  border: 2px solid #645e9d;
+  transition: all 150ms ease-out;
+}
+.btn-primary:hover {
+  background-color: #433e73;
+  border: 2px solid #433e73;
+}
+.search-input {
+  background-color: rgba(82, 76, 134, 0.3);
+  border: 2px solid #645e9d;
+}
+.search-input:focus-visible {
+  outline: 2px solid #8ed2f8;
+  background-color: white;
 }
